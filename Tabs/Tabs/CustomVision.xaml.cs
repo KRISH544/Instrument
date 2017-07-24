@@ -91,9 +91,6 @@ namespace Tabs
                             tag = p.Tag;
                         }
                     }
-
-                    TagLabel.Text = (max >= 0.5) ? tag : "No instrument found";
-
                   }
                   file.Dispose();
                 }

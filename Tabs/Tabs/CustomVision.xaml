@@ -6,6 +6,7 @@
     <StackLayout Margin="20" Orientation="Vertical">
         <Button Text="Take Photo and Analyze" Clicked="loadCamera" />
         <Image x:Name="image" />
-        <Label x:Name="TagLabel" />
+        <Label x:Name="name" Text="{ Binding Name }" />
+        <Label x:Name="url" Text="{ Binding URL }" />
     </StackLayout>
 </ContentPage>

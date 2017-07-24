@@ -17,6 +17,8 @@ namespace Tabs
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CustomVision : ContentPage
     {
+        Uri uri;
+
         public CustomVision()
         {
             InitializeComponent();
@@ -91,9 +93,18 @@ namespace Tabs
                             tag = p.Tag;
                         }
                     }
-                  }
-                  file.Dispose();
                 }
+                await getDetails(tag);
+                file.Dispose();
             }
         }
+        async Task getDetails(string tag)
+        {
+            List<module2kmai806table> instrumentRows = await AzureManager.AzureManagerInstance.getRows();
+
+            uri = instrumentRows[0].url;
+            name.Text = instrumentRows[0].Name;
+            url.Text = instrumentRows[0].url.ToString();
+        }
     }
+}

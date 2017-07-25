@@ -106,5 +106,10 @@ namespace Tabs
             name.Text = instrumentRows[0].Name;
             url.Text = instrumentRows[0].url.ToString();
         }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            Device.OpenUri(new Uri(uri.ToString()));
+        }
     }
 }

@@ -17,7 +17,7 @@ namespace Tabs
         private AzureManager()
         {
             this.client = new MobileServiceClient("http://module2kmai806.azurewebsites.net");
-            this.module2kmai806table = this.client.GetTable<module2kmai806table>();
+            this.Module2kmai806table = this.client.GetTable<module2kmai806table>();
         }
 
         public MobileServiceClient AzureClient
@@ -40,9 +40,13 @@ namespace Tabs
             }
         }
 
+        internal IMobileServiceTable<module2kmai806table> Module2kmai806table { get => Module2kmai806table1; set => Module2kmai806table1 = value; }
+        internal IMobileServiceTable<module2kmai806table> Module2kmai806table1 { get => module2kmai806table; set => module2kmai806table = value; }
+        internal IMobileServiceTable<module2kmai806table> Module2kmai806table2 { get => module2kmai806table; set => module2kmai806table = value; }
+
         public async Task<List<module2kmai806table>> getRows ()
         {
-            return await this.module2kmai806table.ToListAsync();
+            return await this.Module2kmai806table.ToListAsync();
         }
     }
 }
